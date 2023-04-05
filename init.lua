@@ -63,6 +63,16 @@ return {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
+    -- Default open neo-tree
+    vim.api.nvim_create_autocmd({ "VimEnter" }, {
+      desc = "Default open neo-tree",
+      pattern = "*",
+      callback = function()
+        require("neo-tree").focus()
+      end,
+    })
+
+
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {
