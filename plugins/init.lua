@@ -1,7 +1,32 @@
 return {
-  { "EdenEast/nightfox.nvim" },
+  -- { "EdenEast/nightfox.nvim" },
+  {
+    'shaunsingh/nord.nvim',
+    config = function()
+      vim.g.nord_contrast = true
+      vim.g.nord_borders = true
+
+      require('nord').set()
+    end,
+  },
+  -- {
+  --   'olivercederborg/poimandres.nvim',
+  --   config = function()
+  --     require('poimandres').setup {
+  --       -- leave this setup function empty for default config
+  --       -- or refer to the configuration section
+  --       -- for configuration options
+  --     }
+  --   end
+  -- }
   { "rapan931/lasterisk.nvim" },
-  { 'kevinhwang91/nvim-hlslens' },
+  {
+    'kevinhwang91/nvim-hlslens',
+    as = 'hlslens',
+    config = function()
+      require 'hlslens'.setup()
+    end
+  },
   {
     "phaazon/hop.nvim",
     as = 'hop',
@@ -30,5 +55,19 @@ return {
       })
     end,
     lazy = false,
-  }
+  },
+  -- {
+  --   "jackMort/ChatGPT.nvim",
+  --   config = function()
+  --     require("chatgpt").setup()
+  --   end,
+  --   requires = {
+  --     "MunifTanjim/nui.nvim",
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-telescope/telescope.nvim"
+  --   },
+  --   lazy = false,
+  -- },
+
+
 }
