@@ -35,5 +35,6 @@ return {
 		["<S-h>"] = { "^" },
 		["--"] = { "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", desc =
 		"Toggle comment out" },
+		["p"] = { '"_dP' },
 	},
 }
