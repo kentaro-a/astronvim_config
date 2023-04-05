@@ -10,7 +10,8 @@ return {
     tabstop = 4,
     shiftwidth = 4,
     writebackup = false,
-    undofile = false, -- Disable persistent undo
+    undofile = false,  -- Disable persistent undo
+    linebreak = false, -- Wrap lines at 'breakat'
   },
   g = {
     mapleader = " ",                 -- sets vim.g.mapleader
