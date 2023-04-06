@@ -29,6 +29,7 @@ return {
 		["<leader>rbs"] = { "<CMD>SearchReplaceMultiBufferSelections<CR>" },
 		["<leader>rbo"] = { "<CMD>SearchReplaceMultiBufferOpen<CR>" },
 		["<leader>rbw"] = { "<CMD>SearchReplaceMultiBufferCWord<CR>" },
+		["<leader>fw"] = { "<CMD>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>" },
 	},
 	v = {
 		["<S-l>"] = { "$<Left>" },
