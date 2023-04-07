@@ -39,6 +39,8 @@ return {
 		["--"] = { "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", desc =
 		"Toggle comment out" },
 		["p"] = { '"_dP' },
+		["<C-r>"] = { "<CMD>SearchReplaceSingleBufferVisualSelection<CR>" },
+		["<C-s>"] = { "<CMD>SearchReplaceWithinVisualSelection<CR>" },
 	},
 	i = {
 
