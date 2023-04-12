@@ -35,7 +35,7 @@ return {
           -- "go",
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
-          -- "python",
+          "sql",
         },
       },
       disabled = { -- disable formatting capabilities for the listed language servers
@@ -102,5 +102,6 @@ return {
     unmap("n", "<leader>q")
     unmap("n", "<leader>/")
     unmap("v", "<leader>/")
+    unmap("n", "<leader>ff")
   end,
 }
