@@ -21,10 +21,10 @@ return {
 		["qq"] = { function() require("astronvim.utils.buffer").close() end, desc = "Close buffer" },
 		["QQ"] = { function() require("astronvim.utils.buffer").close(0, true) end, desc = "Force Close buffer" },
 		["m"] = { "<cmd>lua require'hop'.hint_words()<cr>", desc = "Force Close buffer", noremap = true },
-		["<Space><Space>"] = {
-			"yiw<cmd>lua require('lasterisk').search()require('hlslens').start()<cr>", desc =
+		["<Space><Space>"] = { "*<cmd>lua require('lasterisk').search()require('hlslens').start()<cr>", desc =
 		"Find word in current buffer", silent = true },
 		["ff"] = { "<CMD>lua require('telescope.builtin').find_files()<CR>" },
+		["FF"] = { function() require('telescope.builtin').find_files({ default_text = vim.call('expand', '<cword>') }) end },
 		["<leader>rs"] = { "<CMD>SearchReplaceSingleBufferSelections<CR>" },
 		["<leader>ro"] = { "<CMD>SearchReplaceSingleBufferOpen<CR>" },
 		["<leader>rw"] = { "<CMD>SearchReplaceSingleBufferCWord<CR>" },
@@ -35,17 +35,20 @@ return {
 		["<leader>fo"] = { "<CMD>lua require('telescope.builtin').oldfiles({only_cwd=true})<CR>" },
 		["<leader>hh"] = { "<CMD>lua require('telescope.actions.history').get_simple_history()<CR>" },
 		[",f"] = { "<cmd>lua vim.lsp.buf.formatting()<CR>" },
+
+
 	},
 	v = {
 		["<S-l>"] = { "$<Left>" },
 		["<S-h>"] = { "^" },
-		["--"] = { "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", desc =
-		"Toggle comment out" },
+		["--"] = { "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", desc = "Toggle comment out" },
 		["p"] = { '"_dP' },
 		["<C-r>"] = { "<CMD>SearchReplaceSingleBufferVisualSelection<CR>" },
 		["<C-s>"] = { "<CMD>SearchReplaceWithinVisualSelection<CR>" },
 	},
 	i = {
 
+	},
+	x = {
 	},
 }
