@@ -48,7 +48,7 @@ return {
                         -- extend mappings
                         i = {
                             ["<C-k>"] = lga_actions.quote_prompt(),
-                            ["<C-i>"] = lga_actions.quote_prompt { postfix = " --iglob " },
+                            [',;'] = lga_actions.quote_prompt { postfix = " --iglob " },
                             ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
                             ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
                         },

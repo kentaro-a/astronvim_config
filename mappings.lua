@@ -21,7 +21,7 @@ return {
 		["qq"] = { function() require("astronvim.utils.buffer").close() end, desc = "Close buffer" },
 		["QQ"] = { function() require("astronvim.utils.buffer").close(0, true) end, desc = "Force Close buffer" },
 		["m"] = { "<cmd>lua require'hop'.hint_words()<cr>", desc = "Force Close buffer", noremap = true },
-		["<Space><Space>"] = { "*<cmd>lua require('lasterisk').search()require('hlslens').start()<cr>", desc =
+		["<Space><Space>"] = { "yiw*<S-n><cmd>lua require('lasterisk').search()require('hlslens').start()<cr>", desc =
 		"Find word in current buffer", silent = true },
 		["ff"] = { "<CMD>lua require('telescope.builtin').find_files()<CR>" },
 		["FF"] = { function() require('telescope.builtin').find_files({ default_text = vim.call('expand', '<cword>') }) end },

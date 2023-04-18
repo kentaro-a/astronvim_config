@@ -77,6 +77,7 @@ return {
           diagnostics = get_icon "Diagnostic" .. " Diagnostic",
         },
       },
+      default_source = "filesystem",
       default_component_configs = {
         indent = { padding = 0, indent_size = 1 },
         icon = {

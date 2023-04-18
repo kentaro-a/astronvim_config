@@ -32,7 +32,8 @@ return {
       format_on_save = {
         enabled = true,     -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
-          -- "go",
+          "go",
+          "jsx",
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
           "sql",
@@ -95,7 +96,7 @@ return {
     unmap("n", "[b")
     unmap("n", "<leader>c")
     unmap("n", "<leader>C")
-    unmap("n", "<leader>n")
+    -- unmap("n", "<leader>n")
     unmap("n", "<leader>o")
     unmap("n", "<leader>w")
     unmap("n", "<leader>h")

@@ -45,7 +45,7 @@ return {
 			local button = require("astronvim.utils").alpha_button
 			opts.section.buttons.val = {
 				button("LDR e  ", "  Open Explorer  "),
-				button("LDR S l", "  Last Session  "),
+				button("LDR n  ", "  New File  "),
 			}
 
 
