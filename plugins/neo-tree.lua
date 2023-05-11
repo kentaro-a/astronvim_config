@@ -122,10 +122,8 @@ return {
         filtered_items = {
           visible = false,
           hide_dotfiles = false,
-          hide_gitignored = false,
+          hide_gitignored = true,
           hide_by_name = {
-            ".git",
-            "node_modules",
           },
           always_show = {
             ".gitignore",
@@ -137,6 +135,8 @@ return {
             ".mypycache",
             ".DS_Store",
             "thumbs.db",
+            ".git",
+            "node_modules",
           },
         },
       },

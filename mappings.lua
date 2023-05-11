@@ -34,14 +34,13 @@ return {
 		["<leader>fw"] = { "<CMD>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>" },
 		["<leader>fo"] = { "<CMD>lua require('telescope.builtin').oldfiles({only_cwd=true})<CR>" },
 		["<leader>hh"] = { "<CMD>lua require('telescope.actions.history').get_simple_history()<CR>" },
-		[",f"] = { "<cmd>lua vim.lsp.buf.formatting()<CR>" },
-
-
+		[",f"] = { "<cmd>lua vim.lsp.buf.format({async=true})<CR>" },
 	},
 	v = {
 		["<S-l>"] = { "$<Left>" },
 		["<S-h>"] = { "^" },
-		["--"] = { "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", desc = "Toggle comment out" },
+		["--"] = { "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", desc =
+		"Toggle comment out" },
 		["p"] = { '"_dP' },
 		["<C-r>"] = { "<CMD>SearchReplaceSingleBufferVisualSelection<CR>" },
 		["<C-s>"] = { "<CMD>SearchReplaceWithinVisualSelection<CR>" },
