@@ -17,9 +17,10 @@ return {
     },
   },
   -- Set colorscheme to use
-  -- colorscheme = "poimandres",
-  colorscheme = "nord",
-  -- colorscheme = "nightfox",
+  -- colorscheme = "duskfox",
+  -- colorscheme = "nordfox",
+  colorscheme = "nightfox",
+  -- colorscheme = "terafox",
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
     virtual_text = true,
