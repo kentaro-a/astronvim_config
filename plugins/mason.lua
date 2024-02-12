@@ -19,7 +19,17 @@ return {
     "jay-babu/mason-null-ls.nvim",
     -- overrides `require("mason-null-ls").setup(...)`
     opts = {
-      -- ensure_installed = { "prettier", "stylua" },
+      ensure_installed = { "prettier" },
+      handlers = {
+          -- for prettier
+          prettier = function()
+            require("null-ls").register(require("null-ls").builtins.formatting.prettier.with {
+              condition = function(utils)
+                return utils.root_has_file ".prettierrc"
+              end,
+            })
+          end,
+      },
     },
   },
   {

@@ -5,7 +5,9 @@ return {
     'kevinhwang91/nvim-hlslens',
     as = 'hlslens',
     config = function()
-      require 'hlslens'.setup()
+      require 'hlslens'.setup({
+        show_count = false, -- This disables the [N/M] counter display
+      })
     end
   },
   {
@@ -57,6 +59,25 @@ return {
     config = function() require("telescope").load_extension "live_grep_args" end,
   },
 
-  
+  {
+    "github/copilot.vim",
+    config = function()
+      vim.g.copilot_no_tab_map = true
+
+      local keymap = vim.keymap.set
+      -- https://github.com/orgs/community/discussions/29817#discussioncomment-4217615
+      keymap(
+        "i",
+        "<C-g>",
+        'copilot#Accept("<CR>")',
+        { silent = true, expr = true, script = true, replace_keycodes = false }
+      )
+      keymap("i", "<C-j>", "<Plug>(copilot-next)")
+      keymap("i", "<C-k>", "<Plug>(copilot-previous)")
+      keymap("i", "<C-o>", "<Plug>(copilot-dismiss)")
+      keymap("i", "<C-s>", "<Plug>(copilot-suggest)")
+    end,
+    lazy = false,
+  },
 
 }
