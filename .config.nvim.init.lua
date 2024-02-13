@@ -7,10 +7,12 @@ if vim.g.vscode then
     use 'rapan931/lasterisk.nvim'
     use 'phaazon/hop.nvim' 
   end)
-
   require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
-
-
+  require('hlslens').setup({
+    show_count = false,
+    auto_enable = false,
+  })
+  require('hlslens').stop()
 
   -- vim.o.ignorecase = true
   -- vim.o.showcmd=false
@@ -41,33 +43,38 @@ if vim.g.vscode then
 
   -- insert mode
 
+ 
 
 
-else
+
+ else
 
 
-  for _, source in ipairs {
-    "astronvim.bootstrap",
-    "astronvim.options",
-    "astronvim.lazy",
-    "astronvim.autocmds",
-    "astronvim.mappings",
-  } do
-    local status_ok, fault = pcall(require, source)
-    if not status_ok then vim.api.nvim_err_writeln("Failed to load " .. source .. "\n\n" .. fault) end
-  end
-  
-  if astronvim.default_colorscheme then
-    if not pcall(vim.cmd.colorscheme, astronvim.default_colorscheme) then
-      require("astronvim.utils").notify("Error setting up colorscheme: " .. astronvim.default_colorscheme, "error")
-    end
-  end
-  
-  require("astronvim.utils").conditional_func(astronvim.user_opts("polish", nil, false), true)
+   for _, source in ipairs {
+     "astronvim.bootstrap",
+     "astronvim.options",
+     "astronvim.lazy",
+     "astronvim.autocmds",
+     "astronvim.mappings",
+   } do
+     local status_ok, fault = pcall(require, source)
+     if not status_ok then vim.api.nvim_err_writeln("Failed to load " .. source .. "\n\n" .. fault) end
+   end
+   
+   if astronvim.default_colorscheme then
+     if not pcall(vim.cmd.colorscheme, astronvim.default_colorscheme) then
+       require("astronvim.utils").notify("Error setting up colorscheme: " .. astronvim.default_colorscheme, "error")
+     end
+   end
+   
+   require("astronvim.utils").conditional_func(astronvim.user_opts("polish", nil, false), true)
 
 
-  -- vim.o.noshowcmd = true
-  -- vim.o.showcmd=false
+   -- vim.o.noshowcmd = true
+   -- vim.o.showcmd=false
+
+  require('hlslens').setup({show_count = false})
+
+ end
 
 
-end
